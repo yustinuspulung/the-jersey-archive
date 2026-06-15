@@ -1,29 +1,50 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { SiteHeader } from "@/components/locker/SiteHeader";
+import { Hero } from "@/components/locker/Hero";
+import { Trust } from "@/components/locker/Trust";
+import { Collections } from "@/components/locker/Collections";
+import { BestSellers } from "@/components/locker/BestSellers";
+import { WhyUs } from "@/components/locker/WhyUs";
+import { VintageSpotlight } from "@/components/locker/VintageSpotlight";
+import { Testimonials } from "@/components/locker/Testimonials";
+import { Newsletter } from "@/components/locker/Newsletter";
+import { SiteFooter } from "@/components/locker/SiteFooter";
 
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Your App" },
-      { name: "description", content: "Replace this with a one-sentence description of your app." },
-      { property: "og:title", content: "Your App" },
-      { property: "og:description", content: "Replace this with a one-sentence description of your app." },
+      { title: "The Locker Room — Original Football Jerseys" },
+      {
+        name: "description",
+        content:
+          "Premium online store for 100% original football jerseys. From the latest season releases to rare vintage and collector editions.",
+      },
+      { property: "og:title", content: "The Locker Room — Original Football Jerseys" },
+      {
+        property: "og:description",
+        content:
+          "Curated collection of authentic football jerseys — new season releases, vintage classics, and limited editions.",
+      },
     ],
   }),
   component: Index,
 });
 
-// IMPORTANT: Replace this placeholder. See ./README.md for routing conventions.
 function Index() {
   return (
-    <div
-      className="flex min-h-screen items-center justify-center"
-      style={{ backgroundColor: "#fcfbf8" }}
-    >
-      <img
-        data-lovable-blank-page-placeholder="REMOVE_THIS"
-        src="https://cdn.gpteng.co/blank-app-v1.svg"
-        alt="Your app will live here!"
-      />
+    <div className="min-h-screen bg-background text-ink">
+      <SiteHeader />
+      <main>
+        <Hero />
+        <Trust />
+        <Collections />
+        <BestSellers />
+        <WhyUs />
+        <VintageSpotlight />
+        <Testimonials />
+        <Newsletter />
+      </main>
+      <SiteFooter />
     </div>
   );
 }
